@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace PaylocityConsole
 {
-    public class PaylocityObjects
+    public static class PaylocityObjects
     {
-        public void DisplayPaylocityObjects(List<PaylocityDto> dtoList)
+        public static void DisplayPaylocityObjects(List<PaylocityDto> dtoList)
         {
             Console.WriteLine("\nDisplaying Results:");
             var orderedList = dtoList.OrderByDescending(x => x.date).ToList();
@@ -21,7 +21,7 @@ namespace PaylocityConsole
             }
         }
 
-        public List<PaylocityDto> BuildPaylocityObject()
+        public static List<PaylocityDto> BuildPaylocityObject()
         {
             var objectList = new List<PaylocityDto>();
             var addAnother = "n";

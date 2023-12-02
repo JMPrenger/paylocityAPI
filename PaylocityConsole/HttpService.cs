@@ -22,9 +22,7 @@ namespace PaylocityConsole
         public async Task<bool> AddObjects(List<PaylocityDto> objectList)
         {
             var contentString = JsonSerializer.Serialize(objectList);
-
             var content = new StringContent(contentString, Encoding.UTF8, "application/json");
-
             var response = await httpClient.PostAsync("/AddObjects", content);
 
             if (response.IsSuccessStatusCode)

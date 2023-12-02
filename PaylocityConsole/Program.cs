@@ -11,7 +11,6 @@ namespace PaylocityConsole
     {
         static void Main(string[] args)
         {
-            var paylocity = new PaylocityObjects();
             var httpService = new HttpService();
             int optionNumber;
             var option = string.Empty;
@@ -30,7 +29,7 @@ namespace PaylocityConsole
                 {
                     case 1:
                         {
-                            var objectList = paylocity.BuildPaylocityObject();
+                            var objectList = PaylocityObjects.BuildPaylocityObject();
                             var result = Task.Run(() => httpService.AddObjects(objectList)).GetAwaiter().GetResult();
                             if (result)
                             {
@@ -45,7 +44,7 @@ namespace PaylocityConsole
                     case 2:
                         {
                             var objects = Task.Run(() => httpService.GetObjects()).GetAwaiter().GetResult();
-                            paylocity.DisplayPaylocityObjects(objects);
+                            PaylocityObjects.DisplayPaylocityObjects(objects);
                             break;
                         }
                 }
