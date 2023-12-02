@@ -37,7 +37,7 @@ namespace PaylocityConsole
                 string? stringDate = Console.ReadLine();
                 while (!Regex.Match(stringDate, "^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01])$").Success)
                 {
-                    Console.Write("Enter the object's date (YYYY-MM-DD): ");
+                    Console.Write("Please end the object's date in the correct format (YYYY-MM-DD): ");
                     stringDate = Console.ReadLine();
                 }
 

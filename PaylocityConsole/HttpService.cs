@@ -11,7 +11,6 @@ namespace PaylocityConsole
     public class HttpService
     {
         protected HttpClient httpClient;
-        protected string baseAddress = "https://localhost:7116";
 
         public HttpService()
         {
