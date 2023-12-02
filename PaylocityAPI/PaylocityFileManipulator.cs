@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using PaylocityModels;
+using System.Diagnostics;
 using System.Reflection.PortableExecutable;
 using System.Text.Json;
 

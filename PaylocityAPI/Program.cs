@@ -1,5 +1,6 @@
 using PaylocityAPI;
 using System.Diagnostics;
+using PaylocityModels;
 
 var builder = WebApplication.CreateBuilder(args);
 
