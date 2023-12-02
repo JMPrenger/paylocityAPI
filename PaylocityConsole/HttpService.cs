@@ -37,15 +37,15 @@ namespace PaylocityConsole
         public async Task<List<PaylocityDto>> GetObjects()
         {
             var response = await httpClient.GetAsync("/GetAllObjects");
-            List<PaylocityDto> objectList;
+            List<PaylocityDto> objectList = new ();
             if (response.IsSuccessStatusCode)
             {
                 var responseString = await response.Content.ReadAsStringAsync();
-                objectList = JsonSerializer.Deserialize<List<PaylocityDto>>(responseString);
-            }
-            else
-            {
-                objectList = [];
+
+                if (response.IsSuccessStatusCode)
+                {
+                    objectList = JsonSerializer.Deserialize<List<PaylocityDto>>(responseString);
+                }
             }
             return objectList;
         }
