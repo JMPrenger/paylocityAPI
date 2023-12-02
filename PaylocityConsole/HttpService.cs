@@ -37,7 +37,7 @@ namespace PaylocityConsole
         public async Task<List<PaylocityDto>> GetObjects()
         {
             var response = await httpClient.GetAsync("/GetAllObjects");
-            List<PaylocityDto> objectList = new ();
+            List<PaylocityDto> objectList = [];
             if (response.IsSuccessStatusCode)
             {
                 var responseString = await response.Content.ReadAsStringAsync();
