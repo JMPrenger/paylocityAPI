@@ -19,12 +19,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapPost("/AddObject", async (PaylocityDto dto) =>
+app.MapPost("/AddObjects", async (List<PaylocityDto> dto) =>
 {
     try
     {
         var objectList = await PaylocityFileManipulator.ReadFile();
-        objectList.Add(dto);
+        objectList.AddRange(dto);
 
         await PaylocityFileManipulator.WriteObjectToFile(objectList);
         return Results.Ok();
