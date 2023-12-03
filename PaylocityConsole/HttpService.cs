@@ -1,10 +1,6 @@
 ﻿using PaylocityModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace PaylocityConsole
 {
@@ -14,15 +10,16 @@ namespace PaylocityConsole
 
         public HttpService()
         {
-            httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri("https://localhost:7116");
+            httpClient = new HttpClient
+            {
+                BaseAddress = new Uri("https://localhost:7116")
+            };
         }
 
         public async Task<bool> AddObjects(List<PaylocityDto> objectList)
         {
             var contentString = JsonSerializer.Serialize(objectList);
-            var content = new StringContent(contentString, Encoding.UTF8, "application/json");
-            var response = await httpClient.PostAsync("/AddObjects", content);
+            var response = await httpClient.PostAsync("/AddObjects", new StringContent(contentString, Encoding.UTF8, "application/json"));
 
             if (response.IsSuccessStatusCode)
             {
