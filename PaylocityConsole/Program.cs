@@ -16,7 +16,7 @@
                     option = PresentOptions();
                     isNum = int.TryParse(option, out optionNumber);
 
-                } while (!isNum || (optionNumber > 3));
+                } while (!isNum || (optionNumber < 1 && optionNumber > 3));
 
                 switch (optionNumber)
                 {
