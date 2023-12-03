@@ -40,6 +40,8 @@
                             PaylocityObjects.DisplayPaylocityObjects(objects);
                             break;
                         }
+                    default:
+                        break;
                 }
             } while (optionNumber != 3);
             Console.WriteLine("Exiting...");
