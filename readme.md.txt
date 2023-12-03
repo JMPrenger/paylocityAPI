@@ -1,0 +1,1 @@
+If the solution isn't set to it already, set the Console and API both as startup projects.
