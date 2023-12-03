@@ -38,11 +38,7 @@ namespace PaylocityConsole
             if (response.IsSuccessStatusCode)
             {
                 var responseString = await response.Content.ReadAsStringAsync();
-
-                if (response.IsSuccessStatusCode)
-                {
-                    objectList = JsonSerializer.Deserialize<List<PaylocityDto>>(responseString);
-                }
+                objectList = JsonSerializer.Deserialize<List<PaylocityDto>>(responseString);
             }
             return objectList;
         }
